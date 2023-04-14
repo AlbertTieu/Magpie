@@ -1,3 +1,5 @@
+package activity3;
+
 /**
  * A program to carry on conversations with a human user.
  * This version: 
@@ -45,6 +47,27 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (findKeyword(statement, "dog") >= 0
+                                || findKeyword(statement, "cat") >= 0)
+		{
+        		response = "Tell me more about your pets.";
+                }
+		else if (findKeyword(statement, "Mr.Jaffe") >= 0)
+		{
+        		response = "He sounds like an excellent teacher!";
+                }
+		else if (findKeyword(statement, "yes") >= 0)
+		{
+        		response = "Why so positive?";
+                }
+                else if (findKeyword(statement, "car") >= 0)
+                {
+                        response = "Do you like cars?";
+                }
+                else if (findKeyword(statement, "sad") >= 0)
+                {
+                        response = "Cheer up.";
+                }
 		else
 		{
 			response = getRandomResponse();
@@ -144,7 +167,7 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -165,6 +188,14 @@ public class Magpie3
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4)
+		{
+		    response = "Ok.";
+                }
+                else if (whichResponse == 5)
+                {
+                    response = "That's nice.";
+                }
 
 		return response;
 	}
